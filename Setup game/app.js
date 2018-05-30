@@ -24,13 +24,22 @@ new Vue ({
       var vm = this;
       this.itsHealth += this.myAttack;
       this.array.push (1);
+      if (this.itsHealth <= 0) {
+        alert ('you won');
+      }
       var random = Math.random ();
       if (random < 0.3) {
         this.myHealth += this.itsAttack;
         this.array2.push (1);
+        if (this.myHealth <= 0) {
+          alert ('you lost');
+        }
       } else if (random < 0.8 && random > 0.3) {
         this.myHealth += this.itsSpecialAttack;
         this.array2Special.push (1);
+        if (this.myHealth <= 0) {
+          alert ('you lost');
+        }
       } else {
         return;
       }
