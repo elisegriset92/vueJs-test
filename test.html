@@ -1,1 +1,66 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test Vue JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="test.css" />
+
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1 v-once>{{title}}</h1>
+    <input type="text" v-on:input="changeTitle">
+    <p>{{ sayHello() }} -
+      <a v-bind:href="link">Google</a>
+    </p>
+    <hr>
+    <p v-html="finishedLink"></p>
+  </div>
+
+  <div id="app-2">
+    <button v-on:click="increase(2, $event)">Click me</button>
+    <button v-on:click="counter++">Click me</button>
+
+    <p>{{counter}}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{x}} / {{y}} -
+      <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" v-on:keyup.enter="alertMe">
+  </div>
+
+  <div id="app-3">
+    <input type="text" v-model="name">
+    <p>{{name}}</p>
+  </div>
+
+
+  <div id="app-4">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Derease</button>
+    <button v-on:click="secondCounter++">Second counter Increase</button>
+
+    <p>Counter : {{counter}}| {{ secondCounter}} </p>
+    <p>Result : {{result()}} | {{ output}}</p>
+
+  </div>
+
+
+  <div id="app-5">
+    <div class="demo" @click="attachRed =!attachRed" :class="divClasses"></div>
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <input type="text" v-model="color">
+    <input type="text" v-model="width">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="test.js"></script>
+
+
+</body>
+
+</html>
